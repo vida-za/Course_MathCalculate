@@ -1,0 +1,5 @@
+﻿  DLL_Course.cpp
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\DLL_Course\DLL_Course.cpp(30,15): warning C4305: return: усечение из "double" в "float"
+  LINK : не найден или не выполнена сборка ..\bin\DLLCourse.dll при последней инкрементной компоновке; выполняется полная компоновка
+     Создается библиотека ..\bin\DLLCourse.lib и объект ..\bin\DLLCourse.exp
+  DLL_Course.vcxproj -> C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\bin\DLLCourse.dll

@@ -1,0 +1,15 @@
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\bin\Debug\Course_MathCalculate.exe.config
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\bin\Debug\Course_MathCalculate.exe
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\bin\Debug\Course_MathCalculate.pdb
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.AssemblyReference.cache
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.SuggestedBindingRedirects.cache
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.Properties.Resources.resources
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.GenerateResource.cache
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.CoreCompileInputs.cache
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.exe
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.pdb
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.exe.config
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.exe
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.pdb
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.CopyComplete
+C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.MainForm.resources

@@ -1,0 +1,2 @@
+﻿#define DLLCOURSE_API __declspec(dllexport)
+#define DLLCOURSE_API __declspec(dllimport)
