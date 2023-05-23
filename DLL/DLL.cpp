@@ -48,3 +48,44 @@ DLL_API void deleteString(const wchar_t* s)
 {
     delete[] s;
 }
+
+DLL_API void SaveExpression(char** s)
+{
+    std::ofstream WriteFile("Expression.txt");
+    WriteFile.clear();
+    WriteFile << *s;
+    WriteFile.close();
+}
+
+DLL_API void Calculate()
+{
+    std::ifstream ReadFile("Expression.txt");
+    std::string Expr;
+    getline(ReadFile, Expr);
+    ReadFile.close();
+    std::string deleteWhiteSpace = " ";
+    size_t Index{ Expr.find(deleteWhiteSpace) };
+    while (Index != std::string::npos)
+    {
+        Expr.erase(Index, deleteWhiteSpace.length());
+        Index = Expr.find(deleteWhiteSpace, Index + deleteWhiteSpace.length());
+    }
+    std::ofstream WriteFile("Solution.txt");
+    WriteFile << Expr << "\n";
+    WriteFile.close();
+}
+
+DLL_API void ShowSolution(char** s)
+{
+    std::ifstream ReadFile("Solution.txt");
+    if (!ReadFile.is_open())
+        return;
+
+    std::string c(
+        (std::istreambuf_iterator<char>(ReadFile)),
+        std::istreambuf_iterator<char>()
+    );
+
+    *s = (char*)CoTaskMemAlloc(c.length());
+    strcpy(*s, c.c_str());
+}

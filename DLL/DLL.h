@@ -4,6 +4,9 @@
 // использующем данную DLL. Благодаря этому любой другой проект, исходные файлы которого включают данный файл, видит
 // функции DLL_API как импортированные из DLL, тогда как данная DLL видит символы,
 // определяемые данным макросом, как экспортированные.
+#include <fstream>
+#include <objbase.h>
+#include <iostream>
 #ifdef DLL_EXPORTS
 #define DLL_API __declspec(dllexport)
 #else
@@ -27,4 +30,7 @@ extern "C"
 	DLL_API void TestFunc2(wchar_t* str1, const wchar_t* str2, size_t str1leng);
 	DLL_API const wchar_t* TestFunc3(wchar_t* str1, wchar_t* str2);
 	DLL_API void deleteString(const wchar_t* s);
+	DLL_API void SaveExpression(char** s);
+	DLL_API void Calculate();
+	DLL_API void ShowSolution(char** s);
 }
