@@ -13,3 +13,15 @@ C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_M
 C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.pdb
 C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.CopyComplete
 C:\Users\kuzne\OneDrive\Рабочий стол\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.MainForm.resources
+C:\Университет\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.exe.config
+C:\Университет\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.exe
+C:\Университет\4 семестр\ООП\Course_MathCalculate\bin\Course_MathCalculate.pdb
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.AssemblyReference.cache
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.SuggestedBindingRedirects.cache
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.MainForm.resources
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.Properties.Resources.resources
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.GenerateResource.cache
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.CoreCompileInputs.cache
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.CopyComplete
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.exe
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.pdb

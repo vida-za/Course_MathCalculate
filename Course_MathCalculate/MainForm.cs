@@ -1,53 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Course_MathCalculate
 {
     public partial class MainForm : Form
     {
-        [DllImport("DLL.dll", CharSet = CharSet.Ansi)]
-        public static extern void TestFunc(IntPtr Expression, ref int size);
-        [DllImport("DLL.dll", CharSet = CharSet.Unicode)]
-        public static extern void TestFunc2(IntPtr str1, string str2, IntPtr size);
-        [DllImport("DLL.dll", CharSet = CharSet.Unicode)]
-        public static extern IntPtr TestFunc3(string str1, string str2);
-        [DllImport("DLL.dll", CharSet = CharSet.Unicode)]
-        public static extern void deleteString(IntPtr str);
+        [DllImport("DLL.dll")]
+        static extern void ReturnResult(string s1, ref string s2);
         public MainForm()
         {
             InitializeComponent();
         }
-
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            var pStr1 = Marshal.AllocHGlobal(4096);
-            var data = Encoding.Unicode.GetBytes(textBoxExpression.Text);
-            Marshal.Copy(data, 0, pStr1, data.Length);
-            TestFunc2(pStr1, "Hello", new IntPtr(4096));
-            var result = Marshal.PtrToStringUni(pStr1);
-            Marshal.FreeHGlobal(pStr1);
+            string mathExpr = textBoxExpression.Text;
+            string result = "";
+            ReturnResult(mathExpr, ref result);
             labelPrint.Text = result;
             if (labelPrint.Visible == false) labelPrint.Visible = true;
-
-            //var Expr = Marshal.AllocHGlobal(256);
-            //int size = 256;
-            //TestFunc(Expr, ref size);
-            //labelPrint.Text = Marshal.PtrToStringUni(Expr);
-            //Marshal.FreeHGlobal(Expr);
-
-            //IntPtr pRes = TestFunc3(textBoxExpression.Text, "Hello");
-            //var result = Marshal.PtrToStringUni(pRes);
-            //deleteString(pRes);
-            //labelPrint.Text = result;
-            //if (labelPrint.Visible == false) labelPrint.Visible = true;
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

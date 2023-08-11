@@ -10,21 +10,7 @@
 #define DLL_API __declspec(dllimport)
 #endif
 
-// Этот класс экспортирован из библиотеки DLL
-class DLL_API CDLL {
-public:
-	CDLL(void);
-	// TODO: добавьте сюда свои методы.
-};
-
-extern DLL_API int nDLL;
-
-DLL_API int fnDLL(void);
-
 extern "C"
 {
-	DLL_API void TestFunc(wchar_t* Text, size_t Size);
-	DLL_API void TestFunc2(wchar_t* str1, const wchar_t* str2, size_t str1leng);
-	DLL_API const wchar_t* TestFunc3(wchar_t* str1, wchar_t* str2);
-	DLL_API void deleteString(const wchar_t* s);
+	DLL_API void ReturnResult(char* s1, char** s2);
 }
