@@ -17,6 +17,7 @@ namespace Course_MathCalculate
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+            HistoryForm historyForm = new HistoryForm();
         }
     }
 }

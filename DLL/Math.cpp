@@ -84,13 +84,33 @@ Math::Math(std::string expr)
             dTemp.push_back(tmp);
         }
     }
-    dResult = dTemp[0];
+    if (!dTemp.empty())
+    {
+        dResult = dTemp[0];
+        sResult = std::to_string(dResult);
+    }
+    else
+    {
+        dResult = 0.0;
+        sResult = "Null";
+    }
     dTemp.clear();
-    sResult = std::to_string(dResult);
 }
 
 Math::~Math()
 {
+}
+
+std::string Math::StringPostfixExpr()
+{
+    if (vPostfixExpr.empty()) return "Null";
+    else
+    {
+        std::string sPostfix = "";
+        for (int i = 0; i < vPostfixExpr.size(); i++)
+            sPostfix += vPostfixExpr[i];
+        return sPostfix;
+    }
 }
 
 std::string Math::StringResult()

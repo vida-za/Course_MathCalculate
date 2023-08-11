@@ -28,6 +28,7 @@ public:
 	Math(std::string expr);
 	~Math();
 
+	std::string StringPostfixExpr();
 	std::string StringResult();
 };
 

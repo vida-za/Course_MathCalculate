@@ -13,4 +13,5 @@
 extern "C"
 {
 	DLL_API void ReturnResult(char* s1, char** s2);
+	DLL_API void ReturnPostfixForm(char* s1, char** s2);
 }

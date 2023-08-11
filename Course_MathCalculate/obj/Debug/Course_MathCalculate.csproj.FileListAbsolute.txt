@@ -25,3 +25,4 @@ C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_Ma
 C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.csproj.CopyComplete
 C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.exe
 C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.pdb
+C:\Университет\4 семестр\ООП\Course_MathCalculate\Course_MathCalculate\obj\Debug\Course_MathCalculate.HistoryForm.resources
