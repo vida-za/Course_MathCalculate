@@ -7,13 +7,20 @@ namespace Course_MathCalculate
     public partial class MainForm : Form
     {
         private HistoryForm historyForm;
+
         [DllImport("DLL.dll")]
-        static extern void ReturnResult(string s1, ref string s2);
+        static extern void ReturnResult(ref string s);
         [DllImport("DLL.dll")]
-        static extern void ReturnPostfixForm(string s1, ref string s2);
+        static extern void ReturnPostfixForm(ref string s);
+        [DllImport("DLL.dll")]
+        static extern void SaveExpression(string s);
+        [DllImport("DLL.dll")]
+        static extern void InitDB();
+
         public MainForm()
         {
             InitializeComponent();
+            InitDB();
             labelFirstColumnIndex.Text = "Expression";
             labelSecondColumnIndex.Text = "Postfix Form";
             labelThirdColumnIndex.Text = "Result";
@@ -23,8 +30,9 @@ namespace Course_MathCalculate
             string mathExpr = textBoxExpression.Text;
             string postfixForm = "";
             string result = "";
-            ReturnResult(mathExpr, ref result);
-            ReturnPostfixForm(mathExpr, ref postfixForm);
+            SaveExpression(mathExpr);
+            ReturnResult(ref result);
+            ReturnPostfixForm(ref postfixForm);
             labelFirstColumnValue.Text = mathExpr;
             labelSecondColumnValue.Text = postfixForm;
             labelThirdColumnValue.Text = result;
@@ -35,7 +43,7 @@ namespace Course_MathCalculate
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            textBoxExpression.Text = textBoxExpression.Text.Remove(0);
+            if (textBoxExpression.Text.Length > 0) textBoxExpression.Text = textBoxExpression.Text.Remove(0);
             labelFirstColumnValue.Text = labelFirstColumnValue.Text.Remove(0);
             labelSecondColumnValue.Text = labelSecondColumnValue.Text.Remove(0);
             labelThirdColumnValue.Text = labelThirdColumnValue.Text.Remove(0);

@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <fstream>
+#include <iostream>
 
 template <typename T>
 void DeleteFirstElement(std::vector<T> &v);
@@ -18,18 +20,29 @@ class Math
 	friend struct Pred;
 	friend class DB;
 private:
+	static int count;
+	int ID;
+	std::string nameFile;
 	std::string sExpression;
+	std::string sPostfixExpr;
+	std::string sResult;
 	std::vector<char> vExpression;
 	std::vector<char> vPostfixExpr;
-	std::string sResult;
 	double dResult;
 public:
 	Math();
 	Math(std::string expr);
+	Math(const Math& obj_for_copy);
 	~Math();
 
+	Math* Copy();
+	void SaveData();
 	std::string StringPostfixExpr();
 	std::string StringResult();
+	void UpdateCount();
+	int GetCount();
+	Math& operator = (const Math& obj_for_copy);
+	bool operator < (const Math& Next) const;
 };
 
 template<typename T>

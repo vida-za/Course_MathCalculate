@@ -31,6 +31,7 @@
             this.panelBackgroud = new System.Windows.Forms.Panel();
             this.tableLayoutPanelValues = new System.Windows.Forms.TableLayoutPanel();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.tableLayoutPanelIndexes = new System.Windows.Forms.TableLayoutPanel();
             this.labelThirdColumnIndex = new System.Windows.Forms.Label();
             this.labelSecondColumnIndex = new System.Windows.Forms.Label();
@@ -54,6 +55,9 @@
             // 
             // tableLayoutPanelValues
             // 
+            this.tableLayoutPanelValues.AutoScroll = true;
+            this.tableLayoutPanelValues.AutoSize = true;
+            this.tableLayoutPanelValues.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelValues.ColumnCount = 3;
             this.tableLayoutPanelValues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelValues.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
@@ -62,13 +66,14 @@
             this.tableLayoutPanelValues.Location = new System.Drawing.Point(0, 100);
             this.tableLayoutPanelValues.Name = "tableLayoutPanelValues";
             this.tableLayoutPanelValues.RowCount = 1;
-            this.tableLayoutPanelValues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanelValues.Size = new System.Drawing.Size(800, 47);
+            this.tableLayoutPanelValues.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanelValues.Size = new System.Drawing.Size(800, 350);
             this.tableLayoutPanelValues.TabIndex = 1;
             // 
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panelHeader.Controls.Add(this.buttonReset);
             this.panelHeader.Controls.Add(this.tableLayoutPanelIndexes);
             this.panelHeader.Controls.Add(this.buttonBack);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -77,6 +82,21 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(800, 100);
             this.panelHeader.TabIndex = 0;
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonReset.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonReset.Location = new System.Drawing.Point(405, 5);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonReset.MaximumSize = new System.Drawing.Size(100, 30);
+            this.buttonReset.MinimumSize = new System.Drawing.Size(100, 30);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(100, 30);
+            this.buttonReset.TabIndex = 5;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // tableLayoutPanelIndexes
             // 
@@ -135,7 +155,7 @@
             // 
             this.buttonBack.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonBack.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBack.Location = new System.Drawing.Point(690, 10);
+            this.buttonBack.Location = new System.Drawing.Point(1095, 5);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(5);
             this.buttonBack.MaximumSize = new System.Drawing.Size(100, 30);
             this.buttonBack.MinimumSize = new System.Drawing.Size(100, 30);
@@ -155,6 +175,7 @@
             this.Name = "HistoryForm";
             this.Text = "HistoryForm";
             this.panelBackgroud.ResumeLayout(false);
+            this.panelBackgroud.PerformLayout();
             this.panelHeader.ResumeLayout(false);
             this.tableLayoutPanelIndexes.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -171,5 +192,6 @@
         private System.Windows.Forms.Label labelThirdColumnIndex;
         private System.Windows.Forms.Label labelSecondColumnIndex;
         private System.Windows.Forms.Label labelFirstColumnIndex;
+        private System.Windows.Forms.Button buttonReset;
     }
 }

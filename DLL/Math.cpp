@@ -1,14 +1,22 @@
 #include "Math.h"
 
+int Math::count = 0;
+
 Math::Math()
 {
-	sExpression = " ";
-	sResult = " ";
+    if (count == 0) count++;
+    ID = count;
+	sExpression = "";
+    sPostfixExpr = "";
+	sResult = "";
 	dResult = 0.0;
 }
 
 Math::Math(std::string expr)
 {
+    count++;
+    ID = count;
+
 	sExpression = expr;
 
 	for (int i = 0; i < sExpression.length(); i++)
@@ -63,6 +71,7 @@ Math::Math(std::string expr)
     std::vector<double> dTemp;
     for (int i = 0; i < vPostfixExpr.size(); i++)
     {
+        sPostfixExpr += vPostfixExpr[i];
         double tmp = 0;
         if (isdigit(vPostfixExpr[i]))
         {
@@ -95,10 +104,30 @@ Math::Math(std::string expr)
         sResult = "Null";
     }
     dTemp.clear();
+    SaveData();
 }
 
 Math::~Math()
 {
+}
+
+void Math::SaveData()
+{
+    nameFile = "Solution" + std::to_string(ID);
+    std::fstream file(nameFile);
+    while (file.is_open())
+    {
+        count++;
+        ID = count;
+        file.close();
+        nameFile = "Solution" + std::to_string(ID);
+        file.open(nameFile);
+    }
+    std::ofstream outfile(nameFile);
+    outfile << "Expression: " << sExpression << std::endl;
+    outfile << "postFix form: " << sPostfixExpr << std::endl;
+    outfile << "Result: " << sResult << std::endl;
+    outfile.close();
 }
 
 std::string Math::StringPostfixExpr()
@@ -113,9 +142,89 @@ std::string Math::StringPostfixExpr()
     }
 }
 
+Math::Math(const Math& obj_for_copy)
+{
+    count = obj_for_copy.count;
+    ID = obj_for_copy.ID;
+    nameFile = obj_for_copy.nameFile;
+    sExpression = obj_for_copy.sExpression;
+    sPostfixExpr = obj_for_copy.sPostfixExpr;
+    sResult = obj_for_copy.sResult;
+    dResult = obj_for_copy.dResult;
+    for (std::vector<char>::const_iterator it = (obj_for_copy.vExpression).begin(); it != (obj_for_copy.vExpression).end(); it++)
+    {
+        vExpression.push_back(*it);
+    }
+    for (std::vector<char>::const_iterator it = (obj_for_copy.vPostfixExpr).begin(); it != (obj_for_copy.vPostfixExpr).end(); it++)
+    {
+        vPostfixExpr.push_back(*it);
+    }
+}
+
 std::string Math::StringResult()
 {
     return sResult;
+}
+
+Math* Math::Copy()
+{
+    return new Math(*this);
+}
+
+int Math::GetCount()
+{
+    return count;
+}
+
+void Math::UpdateCount()
+{
+    std::string File = "Solution" + std::to_string(ID);
+    std::fstream file(File);
+    while (file.is_open())
+    {
+        count++;
+        ID = count;
+        file.close();
+        File = "Solution" + std::to_string(ID);
+        try
+        {
+            file.open(File);
+        }
+        catch (...)
+        {
+            std::cerr << "File not found.";
+        }
+    }
+    count--;
+    ID = count;
+}
+
+Math& Math::operator=(const Math& obj_for_copy)
+{
+    vExpression.clear();
+    vPostfixExpr.clear();
+
+    count = obj_for_copy.count;
+    ID = obj_for_copy.ID;
+    nameFile = obj_for_copy.nameFile;
+    sExpression = obj_for_copy.sExpression;
+    sPostfixExpr = obj_for_copy.sPostfixExpr;
+    sResult = obj_for_copy.sResult;
+    dResult = obj_for_copy.dResult;
+    for (std::vector<char>::const_iterator it = (obj_for_copy.vExpression).begin(); it != (obj_for_copy.vExpression).end(); it++)
+    {
+        vExpression.push_back(*it);
+    }
+    for (std::vector<char>::const_iterator it = (obj_for_copy.vPostfixExpr).begin(); it != (obj_for_copy.vPostfixExpr).end(); it++)
+    {
+        vPostfixExpr.push_back(*it);
+    }
+
+    return *this;
+}
+bool Math::operator<(const Math& Next) const
+{
+    return ID < Next.ID;
 }
 
 int Priority(char op)

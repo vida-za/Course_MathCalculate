@@ -10,8 +10,14 @@
 #define DLL_API __declspec(dllimport)
 #endif
 
+//DB database;
+
 extern "C"
 {
-	DLL_API void ReturnResult(char* s1, char** s2);
-	DLL_API void ReturnPostfixForm(char* s1, char** s2);
+	DLL_API void ReturnResult(char** s);
+	DLL_API void ReturnPostfixForm(char** s);
+	DLL_API void SaveExpression(char* s);
+	DLL_API void SizeHistory(int* c);
+	DLL_API void ReadMyFileSolution(char** Ex, char** Pf, char** Res, int& ID);
+	DLL_API void InitDB();
 }
