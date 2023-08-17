@@ -12,14 +12,14 @@ DB database;
 
 void ReturnResult(char** s)
 {
-    std::string res = (database.GetLastCreateElement()).StringResult();
+    std::string res = (database.GetLastCreateElement()).GetStringResult();
     *s = (char*)CoTaskMemAlloc(res.length() + 1);
     strcpy_s(*s, res.length() + 1, res.c_str());
 }
 
 void ReturnPostfixForm(char** s)
 {
-    std::string res = (database.GetLastCreateElement()).StringPostfixExpr();
+    std::string res = (database.GetLastCreateElement()).GetStringPostfixExpr();
     *s = (char*)CoTaskMemAlloc(res.length() + 1);
     strcpy_s(*s, res.length() + 1, res.c_str());
 }
@@ -29,9 +29,9 @@ void SaveExpression(char* s)
     database.Push(std::string(s));
 }
 
-void SizeHistory(int* c)
+void SizeHistory(int& c)
 {
-    *c = database.GetSizeDB();
+    c = database.GetSizeDB();
 }
 
 void ReadMyFileSolution(char** Ex, char** Pf, char** Res, int& ID)
@@ -41,7 +41,7 @@ void ReadMyFileSolution(char** Ex, char** Pf, char** Res, int& ID)
     std::string nameFile = "Solution" + std::to_string(ID);
     try
     {
-        std::ifstream file(nameFile);
+        /*std::ifstream file(nameFile);
         while (getline(file, currentRow))
         {
             if (currentRow.find("Expression") != std::string::npos)
@@ -53,8 +53,8 @@ void ReadMyFileSolution(char** Ex, char** Pf, char** Res, int& ID)
             else if (currentRow.find("Result") != std::string::npos)
                 for (int i = currentRow.find(": ") + 2; i < currentRow.size(); i++)
                     res += currentRow[i];
-        }
-        file.close();
+        }*/
+        LoadData(nameFile, ex, pf, res);
         *Ex = (char*)CoTaskMemAlloc(ex.length() + 1);
         *Pf = (char*)CoTaskMemAlloc(pf.length() + 1);
         *Res = (char*)CoTaskMemAlloc(res.length() + 1);
@@ -71,4 +71,15 @@ void ReadMyFileSolution(char** Ex, char** Pf, char** Res, int& ID)
 void InitDB()
 {
     database.Init();
+}
+
+int* CalcEqual(char* s, int& len)
+{
+    int* arr = database.SearchEquals(s, len);
+    return arr;
+}
+
+void ClearEqual(int* arr)
+{
+    delete[] arr;
 }

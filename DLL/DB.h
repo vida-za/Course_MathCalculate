@@ -5,24 +5,43 @@
 #include <algorithm>
 #include <iostream>
 
-struct Pred {
+struct PredID {
 	bool operator()(const Math& First, const Math& Second) const {
 		return First < Second;
 	}
 };
 
+struct PredExpr {
+	bool operator()(const Math& First, const Math& Second) const {
+		return First << Second;
+	}
+};
+
+struct Comp {
+	bool operator()(const Math& o, std::string s) const {
+		return findStringSimilarity(o.sExpression, s) == 0;
+	}
+	bool operator()(std::string s, const Math& o) const {
+		return findStringSimilarity(s, o.sExpression) > 1;
+	}
+};
+
 class DB
 {
-	std::set<Math, Pred> db;
-	std::set<Math>::iterator lastCreateElement;
+private:
+	std::multiset<Math, PredID> db;
+	std::multiset<Math>::iterator lastCreateElement;
 public:
 	DB();
 	DB(const DB& obj_for_copy);
 	~DB();
 
 	void Init();
+	void Push(std::string expr);
+	void CreateSimilarity(std::string search);
 	DB* Copy();
 	int GetSizeDB();
 	Math GetLastCreateElement();
-	void Push(std::string expr);
+	int* SearchEquals(std::string searchExpr, int& size);
+
 };

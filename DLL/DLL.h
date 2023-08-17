@@ -17,7 +17,9 @@ extern "C"
 	DLL_API void ReturnResult(char** s);
 	DLL_API void ReturnPostfixForm(char** s);
 	DLL_API void SaveExpression(char* s);
-	DLL_API void SizeHistory(int* c);
+	DLL_API void SizeHistory(int& c);
 	DLL_API void ReadMyFileSolution(char** Ex, char** Pf, char** Res, int& ID);
 	DLL_API void InitDB();
+	DLL_API int* CalcEqual(char* s, int& len);
+	DLL_API void ClearEqual(int* arr);
 }
